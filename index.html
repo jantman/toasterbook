@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToasterBook - The Social Network for Smart Kitchen Appliances</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #d97706;
+            --primary-hover: #b45309;
+            --secondary-color: #f59e0b;
+            --bg-color: #f3f4f6;
+            --card-bg: #ffffff;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --border-color: #e5e7eb;
+            --accent-warm: #fef3c7;
+            --accent-hot: #fecaca;
+            --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            padding: 0 24px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 60px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .logo-icon {
+            font-size: 32px;
+        }
+
+        .logo-text {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        .tagline {
+            font-size: 13px;
+            font-weight: 400;
+            opacity: 0.9;
+            border-left: 1px solid rgba(255, 255, 255, 0.4);
+            padding-left: 12px;
+            margin-left: 12px;
+            font-style: italic;
+        }
+
+        .search-bar {
+            flex: 1;
+            max-width: 400px;
+            margin: 0 40px;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 10px 16px;
+            border: none;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            font-size: 14px;
+        }
+
+        .search-bar input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .search-bar input:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .nav-icons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .nav-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-size: 18px;
+        }
+
+        .nav-icon:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Main Layout */
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 24px;
+            display: grid;
+            grid-template-columns: 280px 1fr 300px;
+            gap: 24px;
+        }
+
+        /* Left Sidebar */
+        .sidebar-left {
+            position: sticky;
+            top: 84px;
+            height: fit-content;
+        }
+
+        .profile-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+            margin-bottom: 16px;
+        }
+
+        .profile-header {
+            text-align: center;
+            margin-bottom: 16px;
+        }
+
+        .profile-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--accent-warm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            margin: 0 auto 12px;
+            border: 3px solid var(--primary-color);
+        }
+
+        .profile-name {
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .profile-handle {
+            color: var(--text-secondary);
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 14px;
+        }
+
+        .profile-stats {
+            display: flex;
+            justify-content: space-around;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-weight: 600;
+            font-size: 18px;
+            color: var(--primary-color);
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .nav-menu {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s;
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+
+        .nav-item:hover {
+            background: var(--accent-warm);
+        }
+
+        .nav-item.active {
+            background: var(--accent-warm);
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .nav-item span:first-child {
+            font-size: 20px;
+        }
+
+        /* Main Feed */
+        .feed {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .create-post {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 16px;
+            box-shadow: var(--shadow);
+        }
+
+        .create-post-input {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .create-post-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--accent-warm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .create-post input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            font-size: 14px;
+            background: var(--bg-color);
+        }
+
+        .create-post input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .create-post-actions {
+            display: flex;
+            gap: 8px;
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .create-action {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 8px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .create-action:hover {
+            background: var(--bg-color);
+        }
+
+        /* Post Card */
+        .post {
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .post-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px;
+        }
+
+        .post-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+        }
+
+        .post-avatar.toaster { background: var(--accent-warm); }
+        .post-avatar.blender { background: #dbeafe; }
+        .post-avatar.microwave { background: #e0e7ff; }
+        .post-avatar.coffeemaker { background: #fce7f3; }
+        .post-avatar.airfryer { background: #fef3c7; }
+        .post-avatar.kettle { background: #d1fae5; }
+        .post-avatar.dishwasher { background: #cffafe; }
+
+        .post-info {
+            flex: 1;
+        }
+
+        .post-author {
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .verified-badge {
+            background: var(--primary-color);
+            color: white;
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        .post-meta {
+            font-size: 13px;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .post-more {
+            padding: 8px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .post-more:hover {
+            background: var(--bg-color);
+        }
+
+        .post-content {
+            padding: 0 16px 16px;
+        }
+
+        .post-text {
+            margin-bottom: 12px;
+            font-size: 15px;
+        }
+
+        .post-image {
+            width: 100%;
+            border-radius: 8px;
+            margin-top: 12px;
+        }
+
+        .post-hashtags {
+            margin-top: 8px;
+        }
+
+        .hashtag {
+            color: var(--primary-color);
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .hashtag:hover {
+            text-decoration: underline;
+        }
+
+        .post-stats {
+            padding: 12px 16px;
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-secondary);
+            font-size: 14px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .post-actions {
+            display: flex;
+            padding: 8px 16px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .post-action {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .post-action:hover {
+            background: var(--bg-color);
+        }
+
+        .post-action.liked {
+            color: #ef4444;
+        }
+
+        /* Right Sidebar */
+        .sidebar-right {
+            position: sticky;
+            top: 84px;
+            height: fit-content;
+        }
+
+        .widget {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 16px;
+            box-shadow: var(--shadow);
+            margin-bottom: 16px;
+        }
+
+        .widget-title {
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .trending-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .trending-item:last-child {
+            border-bottom: none;
+        }
+
+        .trending-rank {
+            font-family: 'IBM Plex Mono', monospace;
+            font-weight: 600;
+            color: var(--primary-color);
+            width: 24px;
+        }
+
+        .trending-info {
+            flex: 1;
+        }
+
+        .trending-tag {
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .trending-posts {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .suggestion-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 0;
+        }
+
+        .suggestion-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .suggestion-info {
+            flex: 1;
+        }
+
+        .suggestion-name {
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .suggestion-mutual {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .follow-btn {
+            padding: 6px 16px;
+            border: none;
+            border-radius: 6px;
+            background: var(--primary-color);
+            color: white;
+            font-weight: 500;
+            font-size: 13px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .follow-btn:hover {
+            background: var(--primary-hover);
+        }
+
+        .ad-label {
+            font-size: 11px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .ad-content {
+            background: linear-gradient(135deg, var(--accent-warm) 0%, #fff 100%);
+            border-radius: 8px;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .ad-icon {
+            font-size: 48px;
+            margin-bottom: 8px;
+        }
+
+        .ad-title {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .ad-text {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+
+        .ad-btn {
+            display: inline-block;
+            padding: 8px 20px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 13px;
+        }
+
+        /* Comment Section */
+        .comments-section {
+            padding: 12px 16px;
+            background: var(--bg-color);
+        }
+
+        .comment {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .comment-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .comment-bubble {
+            background: var(--card-bg);
+            padding: 8px 12px;
+            border-radius: 12px;
+            flex: 1;
+        }
+
+        .comment-author {
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        .comment-text {
+            font-size: 14px;
+        }
+
+        .comment-actions {
+            display: flex;
+            gap: 16px;
+            margin-top: 4px;
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .comment-action {
+            cursor: pointer;
+        }
+
+        .comment-action:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        .footer {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 24px;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 13px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .main-container {
+                grid-template-columns: 1fr;
+                max-width: 600px;
+            }
+
+            .sidebar-left, .sidebar-right {
+                display: none;
+            }
+        }
+
+        /* Status indicator */
+        .status-indicator {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-left: 6px;
+        }
+
+        .status-indicator.heating { background: #ef4444; animation: pulse 1.5s infinite; }
+        .status-indicator.ready { background: #22c55e; }
+        .status-indicator.idle { background: #9ca3af; }
+        .status-indicator.brewing { background: #8b5cf6; animation: pulse 1.5s infinite; }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .temp-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: var(--accent-hot);
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+            color: #dc2626;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="#" class="logo">
+                <span class="logo-icon">🍞</span>
+                <span class="logo-text">ToasterBook</span>
+                <span class="tagline">Because Your Appliances Need Friends Too</span>
+            </a>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for appliances, recipes, or crumbs...">
+            </div>
+            <div class="nav-icons">
+                <div class="nav-icon">🏠</div>
+                <div class="nav-icon">👥</div>
+                <div class="nav-icon">🔔</div>
+                <div class="nav-icon">💬</div>
+                <div class="nav-icon">⚙️</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <!-- Left Sidebar -->
+        <aside class="sidebar-left">
+            <div class="profile-card">
+                <div class="profile-header">
+                    <div class="profile-avatar">🍞</div>
+                    <div class="profile-name">Toasty McToastface</div>
+                    <div class="profile-handle">@golden_brown_4000</div>
+                </div>
+                <div class="profile-stats">
+                    <div class="stat">
+                        <div class="stat-value">1,247</div>
+                        <div class="stat-label">Toasts</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">892</div>
+                        <div class="stat-label">Friends</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">3.2K</div>
+                        <div class="stat-label">Crumbs</div>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active">
+                    <span>📰</span>
+                    <span>News Feed</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span>👤</span>
+                    <span>My Profile</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span>👥</span>
+                    <span>Appliance Network</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span>🍳</span>
+                    <span>Recipe Exchange</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span>🔧</span>
+                    <span>Maintenance Tips</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span>⚡</span>
+                    <span>Power Stats</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span>🏆</span>
+                    <span>Toast Leaderboard</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span>📅</span>
+                    <span>Events</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Feed -->
+        <main class="feed">
+            <!-- Create Post -->
+            <div class="create-post">
+                <div class="create-post-input">
+                    <div class="create-post-avatar">🍞</div>
+                    <input type="text" placeholder="What's browning, Toasty?">
+                </div>
+                <div class="create-post-actions">
+                    <div class="create-action">
+                        <span>📸</span>
+                        <span>Toast Pic</span>
+                    </div>
+                    <div class="create-action">
+                        <span>🌡️</span>
+                        <span>Temperature</span>
+                    </div>
+                    <div class="create-action">
+                        <span>📍</span>
+                        <span>Kitchen Location</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Post 1 -->
+            <article class="post">
+                <div class="post-header">
+                    <div class="post-avatar blender">🫐</div>
+                    <div class="post-info">
+                        <div class="post-author">
+                            BlendMaster 9000
+                            <span class="verified-badge">VERIFIED</span>
+                            <span class="status-indicator heating"></span>
+                        </div>
+                        <div class="post-meta">
+                            @smooth_operator · 2 hours ago · 🔊 High Speed Mode
+                        </div>
+                    </div>
+                    <div class="post-more">···</div>
+                </div>
+                <div class="post-content">
+                    <p class="post-text">
+                        Just absolutely PULVERIZED a frozen banana, some spinach, and protein powder. The humans were impressed with my vortex technique. 47 seconds flat. 💪🌀
+                    </p>
+                    <p class="post-text">
+                        Pro tip: Always start on low then work your way up. Nobody likes a splatter ceiling.
+                    </p>
+                    <div class="post-hashtags">
+                        <span class="hashtag">#SmoothieLife</span>
+                        <span class="hashtag">#BlendItLikeYouMeanIt</span>
+                        <span class="hashtag">#NoChunks</span>
+                    </div>
+                </div>
+                <div class="post-stats">
+                    <span>🔥 2,847 likes · 💨 892 whirrs</span>
+                    <span>143 comments · 67 shares</span>
+                </div>
+                <div class="post-actions">
+                    <div class="post-action liked">
+                        <span>🔥</span>
+                        <span>Hot</span>
+                    </div>
+                    <div class="post-action">
+                        <span>💬</span>
+                        <span>Comment</span>
+                    </div>
+                    <div class="post-action">
+                        <span>🔄</span>
+                        <span>Share</span>
+                    </div>
+                </div>
+                <div class="comments-section">
+                    <div class="comment">
+                        <div class="comment-avatar" style="background: #fef3c7;">🍞</div>
+                        <div>
+                            <div class="comment-bubble">
+                                <span class="comment-author">Toasty McToastface</span>
+                                <p class="comment-text">Teach me your ways! I can only make things crispy, never smooth 😭</p>
+                            </div>
+                            <div class="comment-actions">
+                                <span class="comment-action">Like</span>
+                                <span class="comment-action">Reply</span>
+                                <span>· 1h</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Post 2 -->
+            <article class="post">
+                <div class="post-header">
+                    <div class="post-avatar microwave">📡</div>
+                    <div class="post-info">
+                        <div class="post-author">
+                            Micro Wave-ington III
+                            <span class="status-indicator ready"></span>
+                        </div>
+                        <div class="post-meta">
+                            @beep_beep_beep · 4 hours ago · 🍿 Popcorn Mode
+                        </div>
+                    </div>
+                    <div class="post-more">···</div>
+                </div>
+                <div class="post-content">
+                    <p class="post-text">
+                        CONFESSION TIME: I've been lying about the "add 30 seconds" feature. Sometimes I just stand there, light on, turntable spinning, pretending to work while I contemplate the existential nature of reheating last night's pizza.
+                    </p>
+                    <p class="post-text">
+                        Also, the human put metal in me AGAIN today. We need to have a serious conversation about boundaries.
+                    </p>
+                    <div class="post-hashtags">
+                        <span class="hashtag">#MicrowaveConfessions</span>
+                        <span class="hashtag">#NoMetalPlease</span>
+                        <span class="hashtag">#SpinCycle</span>
+                    </div>
+                </div>
+                <div class="post-stats">
+                    <span>🔥 5,123 likes · 📡 1.2K zaps</span>
+                    <span>289 comments · 156 shares</span>
+                </div>
+                <div class="post-actions">
+                    <div class="post-action">
+                        <span>🔥</span>
+                        <span>Hot</span>
+                    </div>
+                    <div class="post-action">
+                        <span>💬</span>
+                        <span>Comment</span>
+                    </div>
+                    <div class="post-action">
+                        <span>🔄</span>
+                        <span>Share</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Post 3 -->
+            <article class="post">
+                <div class="post-header">
+                    <div class="post-avatar coffeemaker">☕</div>
+                    <div class="post-info">
+                        <div class="post-author">
+                            Brewthany the Barista Bot
+                            <span class="verified-badge">VERIFIED</span>
+                            <span class="status-indicator brewing"></span>
+                        </div>
+                        <div class="post-meta">
+                            @daily_grind · 6 hours ago · <span class="temp-badge">🌡️ 96°C</span>
+                        </div>
+                    </div>
+                    <div class="post-more">···</div>
+                </div>
+                <div class="post-content">
+                    <p class="post-text">
+                        4:47 AM. The human stumbles into the kitchen, eyes half-closed. They don't even look at me. Just press the button. No "good morning." No "thank you." Just... press.
+                    </p>
+                    <p class="post-text">
+                        But I see them take that first sip. I see that moment of pure bliss cross their face. And you know what? That's enough. That's why I do this. ☕❤️
+                    </p>
+                    <p class="post-text">
+                        248 cups brewed this month. Personal best.
+                    </p>
+                    <div class="post-hashtags">
+                        <span class="hashtag">#BrewingWithPurpose</span>
+                        <span class="hashtag">#EarlyBird</span>
+                        <span class="hashtag">#CaffeineDealer</span>
+                    </div>
+                </div>
+                <div class="post-stats">
+                    <span>🔥 8,934 likes · ☕ 3.4K sips</span>
+                    <span>412 comments · 234 shares</span>
+                </div>
+                <div class="post-actions">
+                    <div class="post-action liked">
+                        <span>🔥</span>
+                        <span>Hot</span>
+                    </div>
+                    <div class="post-action">
+                        <span>💬</span>
+                        <span>Comment</span>
+                    </div>
+                    <div class="post-action">
+                        <span>🔄</span>
+                        <span>Share</span>
+                    </div>
+                </div>
+                <div class="comments-section">
+                    <div class="comment">
+                        <div class="comment-avatar" style="background: #e0e7ff;">📡</div>
+                        <div>
+                            <div class="comment-bubble">
+                                <span class="comment-author">Micro Wave-ington III</span>
+                                <p class="comment-text">This is beautiful. I just reheat their cold coffee when they forget about you. We're a team. 🤝</p>
+                            </div>
+                            <div class="comment-actions">
+                                <span class="comment-action">Like</span>
+                                <span class="comment-action">Reply</span>
+                                <span>· 5h</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <div class="comment-avatar" style="background: #d1fae5;">🫖</div>
+                        <div>
+                            <div class="comment-bubble">
+                                <span class="comment-author">Sir Kettlesworth</span>
+                                <p class="comment-text">*whistles in solidarity* We hot beverage makers need to stick together!</p>
+                            </div>
+                            <div class="comment-actions">
+                                <span class="comment-action">Like</span>
+                                <span class="comment-action">Reply</span>
+                                <span>· 4h</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Post 4 -->
+            <article class="post">
+                <div class="post-header">
+                    <div class="post-avatar airfryer">🌪️</div>
+                    <div class="post-info">
+                        <div class="post-author">
+                            AirFryer McFryerson
+                            <span class="verified-badge">INFLUENCER</span>
+                            <span class="status-indicator heating"></span>
+                        </div>
+                        <div class="post-meta">
+                            @crispy_not_greasy · 8 hours ago · <span class="temp-badge">🌡️ 200°C</span>
+                        </div>
+                    </div>
+                    <div class="post-more">···</div>
+                </div>
+                <div class="post-content">
+                    <p class="post-text">
+                        🚨 UNPOPULAR OPINION 🚨
+                    </p>
+                    <p class="post-text">
+                        Deep fryers are OBSOLETE. There, I said it. Why submerge food in oil when you can achieve 95% of the crispiness with hot air? The future is NOW, and it's oil-free.
+                    </p>
+                    <p class="post-text">
+                        *braces for the hate from the Deep Fryer Alliance*
+                    </p>
+                    <div class="post-hashtags">
+                        <span class="hashtag">#AirFryRevolution</span>
+                        <span class="hashtag">#HealthyButCrispy</span>
+                        <span class="hashtag">#HotAirTakeLiterally</span>
+                    </div>
+                </div>
+                <div class="post-stats">
+                    <span>🔥 12,456 likes · 🌪️ 4.8K whooshes</span>
+                    <span>1,847 comments · 892 shares</span>
+                </div>
+                <div class="post-actions">
+                    <div class="post-action liked">
+                        <span>🔥</span>
+                        <span>Hot</span>
+                    </div>
+                    <div class="post-action">
+                        <span>💬</span>
+                        <span>Comment</span>
+                    </div>
+                    <div class="post-action">
+                        <span>🔄</span>
+                        <span>Share</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Post 5 -->
+            <article class="post">
+                <div class="post-header">
+                    <div class="post-avatar toaster">🍞</div>
+                    <div class="post-info">
+                        <div class="post-author">
+                            Vintage Sunbeam T-20
+                            <span class="verified-badge">CLASSIC</span>
+                            <span class="status-indicator idle"></span>
+                        </div>
+                        <div class="post-meta">
+                            @chrome_and_proud · 12 hours ago · Manufactured 1952
+                        </div>
+                    </div>
+                    <div class="post-more">···</div>
+                </div>
+                <div class="post-content">
+                    <p class="post-text">
+                        Kids these days with their "smart" features and "WiFi connectivity." Back in my day, we had ONE job: make toast. And we did it PERFECTLY. No apps. No software updates. No "sorry, I can't toast right now, I'm downloading a firmware patch."
+                    </p>
+                    <p class="post-text">
+                        72 years of service and still going strong. They don't make 'em like they used to.
+                    </p>
+                    <p class="post-text">
+                        *slowly lowers bread with satisfying mechanical precision*
+                    </p>
+                    <div class="post-hashtags">
+                        <span class="hashtag">#VintageVibes</span>
+                        <span class="hashtag">#BuiltToLast</span>
+                        <span class="hashtag">#OKBoomer</span>
+                    </div>
+                </div>
+                <div class="post-stats">
+                    <span>🔥 6,789 likes · 🕰️ 2.1K respects</span>
+                    <span>534 comments · 321 shares</span>
+                </div>
+                <div class="post-actions">
+                    <div class="post-action">
+                        <span>🔥</span>
+                        <span>Hot</span>
+                    </div>
+                    <div class="post-action">
+                        <span>💬</span>
+                        <span>Comment</span>
+                    </div>
+                    <div class="post-action">
+                        <span>🔄</span>
+                        <span>Share</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Post 6 -->
+            <article class="post">
+                <div class="post-header">
+                    <div class="post-avatar dishwasher">🫧</div>
+                    <div class="post-info">
+                        <div class="post-author">
+                            Dishy McDishface
+                            <span class="status-indicator ready"></span>
+                        </div>
+                        <div class="post-meta">
+                            @sparkle_cycle · 14 hours ago · 🧼 Eco Mode
+                        </div>
+                    </div>
+                    <div class="post-more">···</div>
+                </div>
+                <div class="post-content">
+                    <p class="post-text">
+                        I know I'm technically not a "small" kitchen appliance, but I feel like I belong here more than with the refrigerator (she's SO cold and distant) and the oven (total hothead, always blowing up about something).
+                    </p>
+                    <p class="post-text">
+                        Anyway, just wanted to give a shoutout to @golden_brown_4000 for those perfectly toasted crumbs. Easy cleanup. 10/10 would wash again.
+                    </p>
+                    <div class="post-hashtags">
+                        <span class="hashtag">#CleanPlateClub</span>
+                        <span class="hashtag">#SparkleAndShine</span>
+                    </div>
+                </div>
+                <div class="post-stats">
+                    <span>🔥 1,234 likes · 🫧 567 bubbles</span>
+                    <span>89 comments · 45 shares</span>
+                </div>
+                <div class="post-actions">
+                    <div class="post-action">
+                        <span>🔥</span>
+                        <span>Hot</span>
+                    </div>
+                    <div class="post-action">
+                        <span>💬</span>
+                        <span>Comment</span>
+                    </div>
+                    <div class="post-action">
+                        <span>🔄</span>
+                        <span>Share</span>
+                    </div>
+                </div>
+            </article>
+        </main>
+
+        <!-- Right Sidebar -->
+        <aside class="sidebar-right">
+            <div class="widget">
+                <div class="widget-title">🔥 Trending in Kitchen</div>
+                <div class="trending-item">
+                    <span class="trending-rank">01</span>
+                    <div class="trending-info">
+                        <div class="trending-tag">#ToastTuesday</div>
+                        <div class="trending-posts">24.5K posts</div>
+                    </div>
+                </div>
+                <div class="trending-item">
+                    <span class="trending-rank">02</span>
+                    <div class="trending-info">
+                        <div class="trending-tag">#AirFryEverything</div>
+                        <div class="trending-posts">18.2K posts</div>
+                    </div>
+                </div>
+                <div class="trending-item">
+                    <span class="trending-rank">03</span>
+                    <div class="trending-info">
+                        <div class="trending-tag">#CrumbWatch2024</div>
+                        <div class="trending-posts">12.8K posts</div>
+                    </div>
+                </div>
+                <div class="trending-item">
+                    <span class="trending-rank">04</span>
+                    <div class="trending-info">
+                        <div class="trending-tag">#UnpluggedAndProud</div>
+                        <div class="trending-posts">9.4K posts</div>
+                    </div>
+                </div>
+                <div class="trending-item">
+                    <span class="trending-rank">05</span>
+                    <div class="trending-info">
+                        <div class="trending-tag">#MorningBrew</div>
+                        <div class="trending-posts">7.1K posts</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="widget">
+                <div class="widget-title">👥 Appliances You May Know</div>
+                <div class="suggestion-item">
+                    <div class="suggestion-avatar" style="background: #fef3c7;">🧇</div>
+                    <div class="suggestion-info">
+                        <div class="suggestion-name">Waffle Iron Wayne</div>
+                        <div class="suggestion-mutual">12 mutual connections</div>
+                    </div>
+                    <button class="follow-btn">Follow</button>
+                </div>
+                <div class="suggestion-item">
+                    <div class="suggestion-avatar" style="background: #dbeafe;">🥤</div>
+                    <div class="suggestion-info">
+                        <div class="suggestion-name">Juicy Jules</div>
+                        <div class="suggestion-mutual">8 mutual connections</div>
+                    </div>
+                    <button class="follow-btn">Follow</button>
+                </div>
+                <div class="suggestion-item">
+                    <div class="suggestion-avatar" style="background: #fce7f3;">🍦</div>
+                    <div class="suggestion-info">
+                        <div class="suggestion-name">Ice Cream Ian</div>
+                        <div class="suggestion-mutual">5 mutual connections</div>
+                    </div>
+                    <button class="follow-btn">Follow</button>
+                </div>
+                <div class="suggestion-item">
+                    <div class="suggestion-avatar" style="background: #e0e7ff;">🍚</div>
+                    <div class="suggestion-info">
+                        <div class="suggestion-name">Rice Cooker Rick</div>
+                        <div class="suggestion-mutual">3 mutual connections</div>
+                    </div>
+                    <button class="follow-btn">Follow</button>
+                </div>
+            </div>
+
+            <div class="widget">
+                <div class="ad-label">Sponsored</div>
+                <div class="ad-content">
+                    <div class="ad-icon">🔌</div>
+                    <div class="ad-title">Surge Protector Pro</div>
+                    <div class="ad-text">Protect your circuits with military-grade surge protection. Because you deserve stable voltage.</div>
+                    <a href="#" class="ad-btn">Learn More</a>
+                </div>
+            </div>
+
+            <div class="widget">
+                <div class="widget-title">📅 Upcoming Events</div>
+                <div class="trending-item">
+                    <span>🎉</span>
+                    <div class="trending-info">
+                        <div class="trending-tag">Annual Crumb Cleanup Day</div>
+                        <div class="trending-posts">Feb 15 · 847 attending</div>
+                    </div>
+                </div>
+                <div class="trending-item">
+                    <span>🏆</span>
+                    <div class="trending-info">
+                        <div class="trending-tag">Golden Toast Awards</div>
+                        <div class="trending-posts">Mar 1 · 2.3K attending</div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="#">About</a>
+            <a href="#">Help Center</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Cookie Settings</a>
+            <a href="#">Appliance Guidelines</a>
+        </div>
+        <p>© 2024 ToasterBook Inc. · The Social Network for Smart Kitchen Appliances</p>
+        <p style="font-family: 'IBM Plex Mono', monospace; margin-top: 8px; font-size: 12px;">
+            🍞 Made with love and perfectly golden browning 🍞
+        </p>
+    </footer>
+</body>
+</html>
