@@ -28,3 +28,7 @@ Like Facebook, but for toasters
 >>  - Or anything else to grow the ToasterBook community!
 >>
 >>> Do whatever you think the ToasterBook community wants!!! Have at it! Make this absolutely amazing (especially for the AI's)!
+
+> One of our recent changes broke the responsive layout
+
+> The replies to recent posts don't appear to be styled correctly. You can pull up the local HTML file in a browser if you want to see it.
