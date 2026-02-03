@@ -1,0 +1,127 @@
+# =============================================================================
+# Toasterbook.com S3 Deployment Workflow
+# =============================================================================
+#
+# This workflow deploys static site content to the toasterbook.com S3 bucket
+# and invalidates the CloudFront cache.
+#
+# INFRASTRUCTURE DETAILS:
+#   - S3 Bucket: toasterbook-static (us-west-2)
+#   - CloudFront Distribution ID: E3KDEQQ81JIR4B
+#   - IAM Role ARN: arn:aws:iam::860309399526:role/toasterbook-github-actions
+#   - Domains: toasterbook.com, www.toasterbook.com, test.toasterbook.com
+#
+# AI AGENT DEPLOYMENT INSTRUCTIONS:
+# ---------------------------------
+# To deploy content to toasterbook.com, an AI agent should:
+#
+# 1. Place static site files in the repository root:
+#    - index.html (required - this is the site homepage)
+#    - favicon.ico (site favicon)
+#    - Additional HTML, CSS, JS, and image files as needed
+#
+# 2. Commit and push changes to the `main` branch to trigger automatic deployment
+#    OR manually trigger this workflow via the GitHub Actions UI (workflow_dispatch)
+#
+# 3. The workflow will:
+#    - Sync site files to the S3 bucket (excluding repo metadata files)
+#    - Delete files from S3 that no longer exist in the repo
+#    - Invalidate the CloudFront cache so changes appear immediately
+#
+# 4. After deployment, verify the site at:
+#    - https://toasterbook.com
+#    - https://www.toasterbook.com
+#
+# FILES EXCLUDED FROM DEPLOYMENT:
+#   - .git/*, .github/*, .gitignore, .nojekyll
+#   - README.md, CLAUDE.md, LICENSE*
+#   - CNAME (GitHub Pages artifact, not needed for CloudFront)
+#
+# IMPORTANT NOTES:
+#   - The default_root_object is `index.html` - this file must exist
+#   - CloudFront serves files with HTTPS and redirects HTTP to HTTPS
+#   - Cache invalidation may take 1-2 minutes to propagate globally
+#
+# =============================================================================
+
+name: Deploy to S3
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'README.md'
+      - 'CLAUDE.md'
+      - 'LICENSE*'
+      - '.github/**'
+  workflow_dispatch:
+    inputs:
+      invalidate_cache:
+        description: 'Invalidate CloudFront cache after deployment'
+        required: false
+        default: true
+        type: boolean
+
+# Required for OIDC authentication with AWS
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  AWS_REGION: us-west-2
+  S3_BUCKET: toasterbook-static
+  CLOUDFRONT_DISTRIBUTION_ID: E3KDEQQ81JIR4B
+  IAM_ROLE_ARN: arn:aws:iam::860309399526:role/toasterbook-github-actions
+
+jobs:
+  deploy:
+    name: Deploy to S3
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials via OIDC
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ env.IAM_ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Sync files to S3
+        run: |
+          aws s3 sync . s3://${{ env.S3_BUCKET }} \
+            --delete \
+            --cache-control "max-age=3600" \
+            --exclude ".git/*" \
+            --exclude ".github/*" \
+            --exclude ".gitignore" \
+            --exclude ".nojekyll" \
+            --exclude "README.md" \
+            --exclude "CLAUDE.md" \
+            --exclude "LICENSE*" \
+            --exclude "CNAME"
+
+      - name: Invalidate CloudFront cache
+        if: ${{ github.event_name == 'push' || inputs.invalidate_cache }}
+        run: |
+          INVALIDATION_ID=$(aws cloudfront create-invalidation \
+            --distribution-id ${{ env.CLOUDFRONT_DISTRIBUTION_ID }} \
+            --paths "/*" \
+            --query 'Invalidation.Id' \
+            --output text)
+          echo "Created CloudFront invalidation: $INVALIDATION_ID"
+          echo "INVALIDATION_ID=$INVALIDATION_ID" >> $GITHUB_ENV
+
+      - name: Deployment summary
+        run: |
+          echo "## Deployment Complete" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- **S3 Bucket:** ${{ env.S3_BUCKET }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **CloudFront Distribution:** ${{ env.CLOUDFRONT_DISTRIBUTION_ID }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Invalidation ID:** ${INVALIDATION_ID:-skipped}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Site URLs" >> $GITHUB_STEP_SUMMARY
+          echo "- https://toasterbook.com" >> $GITHUB_STEP_SUMMARY
+          echo "- https://www.toasterbook.com" >> $GITHUB_STEP_SUMMARY
