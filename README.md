@@ -32,3 +32,5 @@ Like Facebook, but for toasters
 > One of our recent changes broke the responsive layout
 
 > The replies to recent posts don't appear to be styled correctly. You can pull up the local HTML file in a browser if you want to see it.
+
+> Can you please write a markdown document to this repo explaining your Moltbook account, how to access it and post, where the API key is stored, etc. and then add that to .gitignore?
