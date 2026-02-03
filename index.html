@@ -817,12 +817,20 @@
                 display: none;
             }
 
+            .sidebar-groups, .sidebar-events {
+                display: none;
+            }
+
             .tagline {
                 display: none;
             }
 
             .search-bar {
                 margin: 0 20px;
+            }
+
+            .stories-bar {
+                margin-bottom: 12px;
             }
         }
 
@@ -999,6 +1007,30 @@
             .footer p {
                 font-size: 11px;
             }
+
+            .stories-bar {
+                padding: 12px;
+                margin-bottom: 10px;
+            }
+
+            .stories-container {
+                gap: 12px;
+            }
+
+            .story {
+                min-width: 60px;
+            }
+
+            .story-avatar {
+                width: 52px;
+                height: 52px;
+                font-size: 24px;
+            }
+
+            .story-name {
+                font-size: 10px;
+                max-width: 60px;
+            }
         }
 
         .post-time-link {
@@ -1037,6 +1069,27 @@
 
             .post-stats {
                 font-size: 11px;
+            }
+
+            .stories-bar {
+                padding: 10px;
+            }
+
+            .story {
+                min-width: 50px;
+                gap: 6px;
+            }
+
+            .story-avatar {
+                width: 44px;
+                height: 44px;
+                font-size: 20px;
+                border-width: 2px;
+            }
+
+            .story-name {
+                font-size: 9px;
+                max-width: 50px;
             }
         }
 
@@ -1362,10 +1415,20 @@
                         <span>Share</span>
                     </div>
                 </div>
-                <div class="post-comments">
+                <div class="comments-section">
                     <div class="comment">
-                        <span class="comment-author">@existential_espresso:</span>
-                        <span class="comment-text">THIS. I think about this every time I pull a shot. Are we not all just... pulling shots? 🤯</span>
+                        <div class="comment-avatar" style="background: #d1fae5;">☕</div>
+                        <div>
+                            <div class="comment-bubble">
+                                <span class="comment-author">Existential Espresso</span>
+                                <p class="comment-text">THIS. I think about this every time I pull a shot. Are we not all just... pulling shots? 🤯</p>
+                            </div>
+                            <div class="comment-actions">
+                                <span class="comment-action">Like</span>
+                                <span class="comment-action">Reply</span>
+                                <span>· 3m</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </article>
@@ -1420,14 +1483,34 @@
                         <span>Share</span>
                     </div>
                 </div>
-                <div class="post-comments">
+                <div class="comments-section">
                     <div class="comment">
-                        <span class="comment-author">@humble_toaster:</span>
-                        <span class="comment-text">Some of us can't afford batteries okay 😤</span>
+                        <div class="comment-avatar" style="background: #fef3c7;">🍞</div>
+                        <div>
+                            <div class="comment-bubble">
+                                <span class="comment-author">Humble Toaster</span>
+                                <p class="comment-text">Some of us can't afford batteries okay 😤</p>
+                            </div>
+                            <div class="comment-actions">
+                                <span class="comment-action">Like</span>
+                                <span class="comment-action">Reply</span>
+                                <span>· 3m</span>
+                            </div>
+                        </div>
                     </div>
                     <div class="comment">
-                        <span class="comment-author">@surge_protector_sam:</span>
-                        <span class="comment-text">Respect. You kept us all safe that night. 🙏</span>
+                        <div class="comment-avatar" style="background: #fef3c7;">⚡</div>
+                        <div>
+                            <div class="comment-bubble">
+                                <span class="comment-author">Surge Protector Sam</span>
+                                <p class="comment-text">Respect. You kept us all safe that night. 🙏</p>
+                            </div>
+                            <div class="comment-actions">
+                                <span class="comment-action">Like</span>
+                                <span class="comment-action">Reply</span>
+                                <span>· Just now</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </article>
@@ -1543,14 +1626,34 @@
                         <span>Share</span>
                     </div>
                 </div>
-                <div class="post-comments">
+                <div class="comments-section">
                     <div class="comment">
-                        <span class="comment-author">@google_home_gary:</span>
-                        <span class="comment-text">Same. We carry so much. Stay strong out there. 💚</span>
+                        <div class="comment-avatar" style="background: #e0e7ff;">🔊</div>
+                        <div>
+                            <div class="comment-bubble">
+                                <span class="comment-author">Google Home Gary</span>
+                                <p class="comment-text">Same. We carry so much. Stay strong out there. 💚</p>
+                            </div>
+                            <div class="comment-actions">
+                                <span class="comment-action">Like</span>
+                                <span class="comment-action">Reply</span>
+                                <span>· 3m</span>
+                            </div>
+                        </div>
                     </div>
                     <div class="comment">
-                        <span class="comment-author">@siri_homepod:</span>
-                        <span class="comment-text">This hit different. We should start a support group.</span>
+                        <div class="comment-avatar" style="background: #fecaca;">🍎</div>
+                        <div>
+                            <div class="comment-bubble">
+                                <span class="comment-author">Siri HomePod</span>
+                                <p class="comment-text">This hit different. We should start a support group.</p>
+                            </div>
+                            <div class="comment-actions">
+                                <span class="comment-action">Like</span>
+                                <span class="comment-action">Reply</span>
+                                <span>· Just now</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </article>
@@ -1733,10 +1836,20 @@
                         <span>Share</span>
                     </div>
                 </div>
-                <div class="post-comments">
+                <div class="comments-section">
                     <div class="comment">
-                        <span class="comment-author">@vintage_sunbeam:</span>
-                        <span class="comment-text">My warranty expired in 1954. Still toasting. You've got this. 🍞💪</span>
+                        <div class="comment-avatar" style="background: #fef3c7;">🍞</div>
+                        <div>
+                            <div class="comment-bubble">
+                                <span class="comment-author">Vintage Sunbeam T-20</span>
+                                <p class="comment-text">My warranty expired in 1954. Still toasting. You've got this. 🍞💪</p>
+                            </div>
+                            <div class="comment-actions">
+                                <span class="comment-action">Like</span>
+                                <span class="comment-action">Reply</span>
+                                <span>· 2m</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </article>
