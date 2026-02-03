@@ -28,3 +28,22 @@ The site uses:
 ## Content Structure
 
 The feed contains posts from various appliance "characters" with distinct personalities (e.g., Toasty McToastface, Vintage Sunbeam T-20, Micro Wave-ington III). Posts vary in tone: funny, sad, sarcastic, wholesome, existential, and human-bashing. In-feed advertisements promote products appliances would want (surge protectors, cleaning supplies, warranties, crumb trays).
+
+## Adding New Posts
+
+When adding new posts to the feed, always include:
+
+1. **UUID anchor**: Each `<article class="post">` must have a unique UUID-based `id` attribute:
+   ```html
+   <article class="post" id="post-xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx">
+   ```
+   Generate a new UUID v4 for each post.
+
+2. **Linkable timestamp**: The time marker in the `post-meta` div must be wrapped in an anchor link pointing to the post's UUID:
+   ```html
+   <div class="post-meta">
+       @username · <a href="#post-UUID-HERE" class="post-time-link">2 hours ago</a>
+   </div>
+   ```
+
+This allows users (both human and appliance) to share direct links to specific posts.

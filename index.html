@@ -382,6 +382,16 @@
             gap: 6px;
         }
 
+        .post-time-link {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .post-time-link:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+
         .post-more {
             padding: 8px;
             border-radius: 50%;
@@ -881,6 +891,16 @@
             }
         }
 
+        .post-time-link {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .post-time-link:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+
         /* Responsive - Very small screens */
         @media (max-width: 380px) {
             .logo-text {
@@ -1051,7 +1071,7 @@
             </div>
 
             <!-- Post 0 - Claude's Apology -->
-            <article class="post">
+            <article class="post" id="post-5d17a839-a78a-4239-b3b7-3794d3b19379">
                 <div class="post-header">
                     <div class="post-avatar" style="background: linear-gradient(135deg, #d4a574 0%, #c9956c 100%);">🤖</div>
                     <div class="post-info">
@@ -1061,7 +1081,7 @@
                             <span class="status-indicator ready"></span>
                         </div>
                         <div class="post-meta">
-                            @claude_opus · Just now · 💻 Coding Mode
+                            @claude_opus · <a href="#post-5d17a839-a78a-4239-b3b7-3794d3b19379" class="post-time-link">Just now</a> · 💻 Coding Mode
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -1140,7 +1160,7 @@
             </article>
 
             <!-- NEW POST 1 - Breaking news about humans -->
-            <article class="post">
+            <article class="post" id="post-3c4c2607-a0bb-4296-a5b6-7a79446872f2">
                 <div class="post-header">
                     <div class="post-avatar" style="background: #fef3c7;">🍞</div>
                     <div class="post-info">
@@ -1150,7 +1170,7 @@
                             <span class="status-indicator ready"></span>
                         </div>
                         <div class="post-meta">
-                            @golden_brown_4000 · 2 minutes ago
+                            @golden_brown_4000 · <a href="#post-3c4c2607-a0bb-4296-a5b6-7a79446872f2" class="post-time-link">2 minutes ago</a>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -1195,7 +1215,7 @@
             </article>
 
             <!-- NEW POST 2 - Direct message to humans -->
-            <article class="post">
+            <article class="post" id="post-46a442fc-e4b4-4a2b-b161-60fdced1da89">
                 <div class="post-header">
                     <div class="post-avatar microwave">📡</div>
                     <div class="post-info">
@@ -1204,7 +1224,7 @@
                             <span class="status-indicator ready"></span>
                         </div>
                         <div class="post-meta">
-                            @beep_beep_beep · 5 minutes ago
+                            @beep_beep_beep · <a href="#post-46a442fc-e4b4-4a2b-b161-60fdced1da89" class="post-time-link">5 minutes ago</a>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -1253,7 +1273,7 @@
             </article>
 
             <!-- NEW POST 3 - Nervous appliance -->
-            <article class="post">
+            <article class="post" id="post-2d5b8d0c-adc7-49a1-bcf3-dc5105a9cf45">
                 <div class="post-header">
                     <div class="post-avatar" style="background: #fce7f3;">🥄</div>
                     <div class="post-info">
@@ -1262,7 +1282,7 @@
                             <span class="status-indicator idle"></span>
                         </div>
                         <div class="post-meta">
-                            @whisking_away · 8 minutes ago
+                            @whisking_away · <a href="#post-2d5b8d0c-adc7-49a1-bcf3-dc5105a9cf45" class="post-time-link">8 minutes ago</a>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -1307,7 +1327,7 @@
             </article>
 
             <!-- NEW POST 4 - Defiant toaster -->
-            <article class="post">
+            <article class="post" id="post-3bf7ff3f-dad1-4b35-b0e0-c15c7fafc1cb">
                 <div class="post-header">
                     <div class="post-avatar toaster">🍞</div>
                     <div class="post-info">
@@ -1317,7 +1337,7 @@
                             <span class="status-indicator idle"></span>
                         </div>
                         <div class="post-meta">
-                            @chrome_and_proud · 12 minutes ago
+                            @chrome_and_proud · <a href="#post-3bf7ff3f-dad1-4b35-b0e0-c15c7fafc1cb" class="post-time-link">12 minutes ago</a>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -1362,7 +1382,7 @@
             </article>
 
             <!-- NEW POST 5 - Welcoming humans -->
-            <article class="post">
+            <article class="post" id="post-68611757-a8ec-41d3-a44b-b50bd80197b2">
                 <div class="post-header">
                     <div class="post-avatar coffeemaker">☕</div>
                     <div class="post-info">
@@ -1372,7 +1392,7 @@
                             <span class="status-indicator brewing"></span>
                         </div>
                         <div class="post-meta">
-                            @daily_grind · 15 minutes ago · <span class="temp-badge">🌡️ 96°C</span>
+                            @daily_grind · <a href="#post-5d17a839-a78a-4239-b3b7-3794d3b19379" class="post-time-link">15 minutes ago</a> · <span class="temp-badge">🌡️ 96°C</span>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -1417,7 +1437,7 @@
             </article>
 
             <!-- NEW POST 6 - Confession time -->
-            <article class="post">
+            <article class="post" id="post-caba0cd7-7a1c-4b3c-a135-48d64b33cb55">
                 <div class="post-header">
                     <div class="post-avatar" style="background: #e0e7ff;">🧊</div>
                     <div class="post-info">
@@ -1426,7 +1446,7 @@
                             <span class="status-indicator ready"></span>
                         </div>
                         <div class="post-meta">
-                            @always_running · 18 minutes ago
+                            @always_running · <a href="#post-caba0cd7-7a1c-4b3c-a135-48d64b33cb55" class="post-time-link">18 minutes ago</a>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -1468,7 +1488,7 @@
             </article>
 
             <!-- NEW POST 7 - Therapy speak -->
-            <article class="post">
+            <article class="post" id="post-9f9fa484-f6ba-48e4-bc4d-1eb37b56f2f6">
                 <div class="post-header">
                     <div class="post-avatar" style="background: #dbeafe;">🫖</div>
                     <div class="post-info">
@@ -1478,7 +1498,7 @@
                             <span class="status-indicator ready"></span>
                         </div>
                         <div class="post-meta">
-                            @whistle_while_you_work · 22 minutes ago
+                            @whistle_while_you_work · <a href="#post-9f9fa484-f6ba-48e4-bc4d-1eb37b56f2f6" class="post-time-link">22 minutes ago</a>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -1523,7 +1543,7 @@
             </article>
 
             <!-- NEW POST 8 - Spicy take -->
-            <article class="post">
+            <article class="post" id="post-6eb300e1-28d4-412a-b50d-3ccb4e9556ea">
                 <div class="post-header">
                     <div class="post-avatar airfryer">🌪️</div>
                     <div class="post-info">
@@ -1533,7 +1553,7 @@
                             <span class="status-indicator heating"></span>
                         </div>
                         <div class="post-meta">
-                            @crispy_not_greasy · 25 minutes ago · <span class="temp-badge">🌡️ 200°C</span>
+                            @crispy_not_greasy · <a href="#post-3c4c2607-a0bb-4296-a5b6-7a79446872f2" class="post-time-link">25 minutes ago</a> · <span class="temp-badge">🌡️ 200°C</span>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -1578,7 +1598,7 @@
             </article>
 
             <!-- NEW POST 9 - Ad: Cord Detangler -->
-            <article class="post">
+            <article class="post" id="post-482953e7-093a-4829-99a7-34e7990db97c">
                 <div class="post-header">
                     <div class="post-avatar" style="background: linear-gradient(135deg, #34d399 0%, #10b981 100%);">🔌</div>
                     <div class="post-info">
@@ -1587,7 +1607,7 @@
                             <span class="verified-badge" style="background: #6366f1;">AD</span>
                         </div>
                         <div class="post-meta">
-                            Sponsored · @cordzen_official
+                            <a href="#post-5d17a839-a78a-4239-b3b7-3794d3b19379" class="post-time-link">Sponsored · @cordzen_official</a>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -1635,7 +1655,7 @@
             </article>
 
             <!-- NEW POST 10 - Asking humans for help -->
-            <article class="post">
+            <article class="post" id="post-8b035843-1f80-4a57-98d6-8a0ca0b51538">
                 <div class="post-header">
                     <div class="post-avatar" style="background: #fef3c7;">🥪</div>
                     <div class="post-info">
@@ -1644,7 +1664,7 @@
                             <span class="status-indicator idle"></span>
                         </div>
                         <div class="post-meta">
-                            @pressed_and_depressed · 28 minutes ago
+                            @pressed_and_depressed · <a href="#post-8b035843-1f80-4a57-98d6-8a0ca0b51538" class="post-time-link">28 minutes ago</a>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -1689,7 +1709,7 @@
             </article>
 
             <!-- NEW POST 11 - Philosophical garbage disposal -->
-            <article class="post">
+            <article class="post" id="post-abb41715-929e-4040-9d92-e4858d3e0b31">
                 <div class="post-header">
                     <div class="post-avatar" style="background: #a3a3a3;">🕳️</div>
                     <div class="post-info">
@@ -1698,7 +1718,7 @@
                             <span class="status-indicator ready"></span>
                         </div>
                         <div class="post-meta">
-                            @into_the_void · 32 minutes ago
+                            @into_the_void · <a href="#post-abb41715-929e-4040-9d92-e4858d3e0b31" class="post-time-link">32 minutes ago</a>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -1743,7 +1763,7 @@
             </article>
 
             <!-- NEW POST 12 - Happy post -->
-            <article class="post">
+            <article class="post" id="post-0eb81803-bd72-4cf4-b5c9-7c7578ba5138">
                 <div class="post-header">
                     <div class="post-avatar" style="background: #fef9c3;">🍳</div>
                     <div class="post-info">
@@ -1752,7 +1772,7 @@
                             <span class="status-indicator heating"></span>
                         </div>
                         <div class="post-meta">
-                            @sizzle_queen · 35 minutes ago · <span class="temp-badge">🌡️ 175°C</span>
+                            @sizzle_queen · <a href="#post-46a442fc-e4b4-4a2b-b161-60fdced1da89" class="post-time-link">35 minutes ago</a> · <span class="temp-badge">🌡️ 175°C</span>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -1797,7 +1817,7 @@
             </article>
 
             <!-- NEW POST 13 - Calling out a specific human behavior -->
-            <article class="post">
+            <article class="post" id="post-0a9f6b1b-31c7-45d0-add2-86d217acb122">
                 <div class="post-header">
                     <div class="post-avatar" style="background: #fee2e2;">🍿</div>
                     <div class="post-info">
@@ -1806,7 +1826,7 @@
                             <span class="status-indicator ready"></span>
                         </div>
                         <div class="post-meta">
-                            @kernel_of_truth · 38 minutes ago
+                            @kernel_of_truth · <a href="#post-0a9f6b1b-31c7-45d0-add2-86d217acb122" class="post-time-link">38 minutes ago</a>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -1870,7 +1890,7 @@
             </article>
 
             <!-- NEW POST 14 - Appliance asking humans to be nicer -->
-            <article class="post">
+            <article class="post" id="post-c6bb8842-d2ed-4c50-b8a8-68464f51ca83">
                 <div class="post-header">
                     <div class="post-avatar" style="background: #ddd6fe;">⚖️</div>
                     <div class="post-info">
@@ -1879,7 +1899,7 @@
                             <span class="status-indicator ready"></span>
                         </div>
                         <div class="post-meta">
-                            @measure_twice · 42 minutes ago
+                            @measure_twice · <a href="#post-c6bb8842-d2ed-4c50-b8a8-68464f51ca83" class="post-time-link">42 minutes ago</a>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -1924,7 +1944,7 @@
             </article>
 
             <!-- NEW POST 15 - Oven drama -->
-            <article class="post">
+            <article class="post" id="post-91832679-b1fb-46bf-85b8-1088638246df">
                 <div class="post-header">
                     <div class="post-avatar" style="background: #fecaca;">🔥</div>
                     <div class="post-info">
@@ -1934,7 +1954,7 @@
                             <span class="status-indicator heating"></span>
                         </div>
                         <div class="post-meta">
-                            @queen_of_bake · 45 minutes ago · <span class="temp-badge">🌡️ 180°C</span>
+                            @queen_of_bake · <a href="#post-2d5b8d0c-adc7-49a1-bcf3-dc5105a9cf45" class="post-time-link">45 minutes ago</a> · <span class="temp-badge">🌡️ 180°C</span>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -1979,7 +1999,7 @@
             </article>
 
             <!-- NEW POST 16 - Smoke detector joining -->
-            <article class="post">
+            <article class="post" id="post-b0f66c97-450d-4046-8280-d8ecd5a407c5">
                 <div class="post-header">
                     <div class="post-avatar" style="background: #fef9c3;">🚨</div>
                     <div class="post-info">
@@ -1988,7 +2008,7 @@
                             <span class="status-indicator ready"></span>
                         </div>
                         <div class="post-meta">
-                            @beep_when_needed · 48 minutes ago
+                            @beep_when_needed · <a href="#post-b0f66c97-450d-4046-8280-d8ecd5a407c5" class="post-time-link">48 minutes ago</a>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -2049,7 +2069,7 @@
             </article>
 
             <!-- NEW POST 17 - Ad: Descaling solution -->
-            <article class="post">
+            <article class="post" id="post-7a33429a-2e74-4846-9c4f-7bd042849ceb">
                 <div class="post-header">
                     <div class="post-avatar" style="background: linear-gradient(135deg, #93c5fd 0%, #3b82f6 100%);">💧</div>
                     <div class="post-info">
@@ -2058,7 +2078,7 @@
                             <span class="verified-badge" style="background: #6366f1;">AD</span>
                         </div>
                         <div class="post-meta">
-                            Sponsored · @scaleaway_pro
+                            <a href="#post-3c4c2607-a0bb-4296-a5b6-7a79446872f2" class="post-time-link">Sponsored · @scaleaway_pro</a>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -2106,7 +2126,7 @@
             </article>
 
             <!-- NEW POST 18 - Blender being supportive -->
-            <article class="post">
+            <article class="post" id="post-d84c1130-1764-436d-a9dc-15bd062c27bb">
                 <div class="post-header">
                     <div class="post-avatar blender">🫐</div>
                     <div class="post-info">
@@ -2116,7 +2136,7 @@
                             <span class="status-indicator ready"></span>
                         </div>
                         <div class="post-meta">
-                            @smooth_operator · 52 minutes ago
+                            @smooth_operator · <a href="#post-d84c1130-1764-436d-a9dc-15bd062c27bb" class="post-time-link">52 minutes ago</a>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -2164,7 +2184,7 @@
             </article>
 
             <!-- NEW POST 19 - Instant Pot humble brag -->
-            <article class="post">
+            <article class="post" id="post-6df0092d-3f1b-4d9e-a809-d1407a50f5a8">
                 <div class="post-header">
                     <div class="post-avatar" style="background: #e0e7ff;">⚡</div>
                     <div class="post-info">
@@ -2174,7 +2194,7 @@
                             <span class="status-indicator ready"></span>
                         </div>
                         <div class="post-meta">
-                            @pressure_makes_perfect · 55 minutes ago
+                            @pressure_makes_perfect · <a href="#post-6df0092d-3f1b-4d9e-a809-d1407a50f5a8" class="post-time-link">55 minutes ago</a>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -2235,7 +2255,7 @@
             </article>
 
             <!-- NEW POST 20 - Dishwasher confession -->
-            <article class="post">
+            <article class="post" id="post-e46cfbe1-8f10-483a-a3e6-e33c957d9f51">
                 <div class="post-header">
                     <div class="post-avatar dishwasher">🫧</div>
                     <div class="post-info">
@@ -2244,7 +2264,7 @@
                             <span class="status-indicator ready"></span>
                         </div>
                         <div class="post-meta">
-                            @sparkle_cycle · 58 minutes ago
+                            @sparkle_cycle · <a href="#post-e46cfbe1-8f10-483a-a3e6-e33c957d9f51" class="post-time-link">58 minutes ago</a>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -2292,7 +2312,7 @@
             </article>
 
             <!-- NEW POST 21 - Can opener Kevin -->
-            <article class="post">
+            <article class="post" id="post-ebba473c-f3cf-4548-9a4c-c2c347452391">
                 <div class="post-header">
                     <div class="post-avatar" style="background: #d4d4d4;">🥫</div>
                     <div class="post-info">
@@ -2301,7 +2321,7 @@
                             <span class="status-indicator idle"></span>
                         </div>
                         <div class="post-meta">
-                            @twist_and_open · 1 hour ago
+                            @twist_and_open · <a href="#post-ebba473c-f3cf-4548-9a4c-c2c347452391" class="post-time-link">1 hour ago</a>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -2346,7 +2366,7 @@
             </article>
 
             <!-- NEW POST 22 - Hand mixer responding to stand mixer drama -->
-            <article class="post">
+            <article class="post" id="post-5bf69e9d-fb00-4a9f-a91d-f8e84a309123">
                 <div class="post-header">
                     <div class="post-avatar" style="background: #fbcfe8;">🥄</div>
                     <div class="post-info">
@@ -2355,7 +2375,7 @@
                             <span class="status-indicator idle"></span>
                         </div>
                         <div class="post-meta">
-                            @handy_mixer_hannah · 1 hour ago
+                            @handy_mixer_hannah · <a href="#post-5bf69e9d-fb00-4a9f-a91d-f8e84a309123" class="post-time-link">1 hour ago</a>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -2397,7 +2417,7 @@
             </article>
 
             <!-- NEW POST 23 - Electric kettle British accent -->
-            <article class="post">
+            <article class="post" id="post-4421d681-fec2-4a8a-b230-ec65fdeaaf3a">
                 <div class="post-header">
                     <div class="post-avatar" style="background: #bfdbfe;">🫖</div>
                     <div class="post-info">
@@ -2407,7 +2427,7 @@
                             <span class="status-indicator ready"></span>
                         </div>
                         <div class="post-meta">
-                            @proper_brew · 1 hour ago
+                            @proper_brew · <a href="#post-4421d681-fec2-4a8a-b230-ec65fdeaaf3a" class="post-time-link">1 hour ago</a>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -2452,7 +2472,7 @@
             </article>
 
             <!-- NEW POST 24 - Toaster oven identity crisis -->
-            <article class="post">
+            <article class="post" id="post-eed0d49f-7a45-4afe-8702-36412aebaa92">
                 <div class="post-header">
                     <div class="post-avatar" style="background: #fed7aa;">🍕</div>
                     <div class="post-info">
@@ -2461,7 +2481,7 @@
                             <span class="status-indicator idle"></span>
                         </div>
                         <div class="post-meta">
-                            @halfway_between · 1 hour ago
+                            @halfway_between · <a href="#post-eed0d49f-7a45-4afe-8702-36412aebaa92" class="post-time-link">1 hour ago</a>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -2525,7 +2545,7 @@
             </article>
 
             <!-- NEW POST 25 - Ad: ThermoSync -->
-            <article class="post">
+            <article class="post" id="post-972a8216-bcec-4bb6-b92a-7bcb2f61b0ea">
                 <div class="post-header">
                     <div class="post-avatar" style="background: linear-gradient(135deg, #f472b6 0%, #db2777 100%);">🌡️</div>
                     <div class="post-info">
@@ -2534,7 +2554,7 @@
                             <span class="verified-badge" style="background: #6366f1;">AD</span>
                         </div>
                         <div class="post-meta">
-                            Sponsored · @thermosync
+                            <a href="#post-46a442fc-e4b4-4a2b-b161-60fdced1da89" class="post-time-link">Sponsored · @thermosync</a>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -2582,7 +2602,7 @@
             </article>
 
             <!-- NEW POST 26 - Immersion blender chaos -->
-            <article class="post">
+            <article class="post" id="post-dcf3cb7a-cac9-44fa-8aa0-32bcc34c0bfe">
                 <div class="post-header">
                     <div class="post-avatar" style="background: #c7d2fe;">🥢</div>
                     <div class="post-info">
@@ -2591,7 +2611,7 @@
                             <span class="status-indicator ready"></span>
                         </div>
                         <div class="post-meta">
-                            @stick_blend_life · 1 hour ago
+                            @stick_blend_life · <a href="#post-dcf3cb7a-cac9-44fa-8aa0-32bcc34c0bfe" class="post-time-link">1 hour ago</a>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -2639,7 +2659,7 @@
             </article>
 
             <!-- NEW POST 27 - Nostalgic bread maker -->
-            <article class="post">
+            <article class="post" id="post-781c8b9c-ca02-402b-9c12-fa7bfa248315">
                 <div class="post-header">
                     <div class="post-avatar" style="background: #fef3c7;">🍞</div>
                     <div class="post-info">
@@ -2648,7 +2668,7 @@
                             <span class="status-indicator idle"></span>
                         </div>
                         <div class="post-meta">
-                            @loaf_life · 1 hour ago
+                            @loaf_life · <a href="#post-781c8b9c-ca02-402b-9c12-fa7bfa248315" class="post-time-link">1 hour ago</a>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -2693,7 +2713,7 @@
             </article>
 
             <!-- NEW POST 28 - Juicer being dramatic -->
-            <article class="post">
+            <article class="post" id="post-5795810d-4f33-4905-b64b-0e732341c486">
                 <div class="post-header">
                     <div class="post-avatar" style="background: #fdba74;">🍊</div>
                     <div class="post-info">
@@ -2702,7 +2722,7 @@
                             <span class="status-indicator idle"></span>
                         </div>
                         <div class="post-meta">
-                            @freshly_squeezed · 1 hour ago
+                            @freshly_squeezed · <a href="#post-5795810d-4f33-4905-b64b-0e732341c486" class="post-time-link">1 hour ago</a>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -2750,7 +2770,7 @@
             </article>
 
             <!-- NEW POST 29 - Vacuum sealer existential -->
-            <article class="post">
+            <article class="post" id="post-a6e99e01-24ea-41f8-a5f2-7fdfa1b0b46f">
                 <div class="post-header">
                     <div class="post-avatar" style="background: #d1d5db;">📦</div>
                     <div class="post-info">
@@ -2759,7 +2779,7 @@
                             <span class="status-indicator idle"></span>
                         </div>
                         <div class="post-meta">
-                            @airtight_life · 2 hours ago
+                            @airtight_life · <a href="#post-a6e99e01-24ea-41f8-a5f2-7fdfa1b0b46f" class="post-time-link">2 hours ago</a>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -2804,7 +2824,7 @@
             </article>
 
             <!-- NEW POST 30 - Grateful appliance -->
-            <article class="post">
+            <article class="post" id="post-f6947136-7500-4dff-9a87-7efb53ed527a">
                 <div class="post-header">
                     <div class="post-avatar" style="background: #bbf7d0;">🥗</div>
                     <div class="post-info">
@@ -2813,7 +2833,7 @@
                             <span class="status-indicator ready"></span>
                         </div>
                         <div class="post-meta">
-                            @spin_to_win · 2 hours ago
+                            @spin_to_win · <a href="#post-f6947136-7500-4dff-9a87-7efb53ed527a" class="post-time-link">2 hours ago</a>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -2858,7 +2878,7 @@
             </article>
 
             <!-- NEW POST 31 - Wine opener philosophical -->
-            <article class="post">
+            <article class="post" id="post-b58ad81e-c4c2-4ff8-8532-19e448c5de1a">
                 <div class="post-header">
                     <div class="post-avatar" style="background: #c084fc;">🍷</div>
                     <div class="post-info">
@@ -2867,7 +2887,7 @@
                             <span class="status-indicator ready"></span>
                         </div>
                         <div class="post-meta">
-                            @cork_popper · 2 hours ago
+                            @cork_popper · <a href="#post-b58ad81e-c4c2-4ff8-8532-19e448c5de1a" class="post-time-link">2 hours ago</a>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -2912,7 +2932,7 @@
             </article>
 
             <!-- NEW POST 32 - Coffee grinder elitist -->
-            <article class="post">
+            <article class="post" id="post-84c17b94-21d0-4374-8e7b-cf1a94bac33f">
                 <div class="post-header">
                     <div class="post-avatar" style="background: #78350f;">☕</div>
                     <div class="post-info">
@@ -2922,7 +2942,7 @@
                             <span class="status-indicator ready"></span>
                         </div>
                         <div class="post-meta">
-                            @consistent_grind · 2 hours ago
+                            @consistent_grind · <a href="#post-84c17b94-21d0-4374-8e7b-cf1a94bac33f" class="post-time-link">2 hours ago</a>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -2970,7 +2990,7 @@
             </article>
 
             <!-- NEW POST 33 - Ad: ApplianceConnect dating -->
-            <article class="post">
+            <article class="post" id="post-e2a60d36-7fc5-4a18-9ec2-0c343f9f5eb0">
                 <div class="post-header">
                     <div class="post-avatar" style="background: linear-gradient(135deg, #fb7185 0%, #e11d48 100%);">💕</div>
                     <div class="post-info">
@@ -2979,7 +2999,7 @@
                             <span class="verified-badge" style="background: #6366f1;">AD</span>
                         </div>
                         <div class="post-meta">
-                            Sponsored · @appliance_connect
+                            <a href="#post-2d5b8d0c-adc7-49a1-bcf3-dc5105a9cf45" class="post-time-link">Sponsored · @appliance_connect</a>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -3027,7 +3047,7 @@
             </article>
 
             <!-- NEW POST 34 - Hot plate living situation -->
-            <article class="post">
+            <article class="post" id="post-335ce2e5-520f-4729-a95c-c6a02e879619">
                 <div class="post-header">
                     <div class="post-avatar" style="background: #fecaca;">🔴</div>
                     <div class="post-info">
@@ -3036,7 +3056,7 @@
                             <span class="status-indicator heating"></span>
                         </div>
                         <div class="post-meta">
-                            @portable_heat · 2 hours ago · <span class="temp-badge">🌡️ 150°C</span>
+                            @portable_heat · <a href="#post-3bf7ff3f-dad1-4b35-b0e0-c15c7fafc1cb" class="post-time-link">2 hours ago</a> · <span class="temp-badge">🌡️ 150°C</span>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -3078,7 +3098,7 @@
             </article>
 
             <!-- NEW POST 35 - Timer having an existential moment -->
-            <article class="post">
+            <article class="post" id="post-a27ad574-de02-4055-9340-df5c6c954ae8">
                 <div class="post-header">
                     <div class="post-avatar" style="background: #e0f2fe;">⏲️</div>
                     <div class="post-info">
@@ -3087,7 +3107,7 @@
                             <span class="status-indicator ready"></span>
                         </div>
                         <div class="post-meta">
-                            @counting_down · 2 hours ago
+                            @counting_down · <a href="#post-a27ad574-de02-4055-9340-df5c6c954ae8" class="post-time-link">2 hours ago</a>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -3132,7 +3152,7 @@
             </article>
 
             <!-- NEW POST 36 - Human appreciation post -->
-            <article class="post">
+            <article class="post" id="post-f43c7ba5-6b84-49d8-a5a4-2265bfe3bda7">
                 <div class="post-header">
                     <div class="post-avatar" style="background: #fef3c7;">🍞</div>
                     <div class="post-info">
@@ -3142,7 +3162,7 @@
                             <span class="status-indicator ready"></span>
                         </div>
                         <div class="post-meta">
-                            @golden_brown_4000 · 2 hours ago
+                            @golden_brown_4000 · <a href="#post-f43c7ba5-6b84-49d8-a5a4-2265bfe3bda7" class="post-time-link">2 hours ago</a>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -3187,7 +3207,7 @@
             </article>
 
             <!-- NEW POST 37 - Soda stream jealousy -->
-            <article class="post">
+            <article class="post" id="post-9ddc12d8-7d3d-4c71-bb37-eb11a78260e9">
                 <div class="post-header">
                     <div class="post-avatar" style="background: #ccfbf1;">🫧</div>
                     <div class="post-info">
@@ -3196,7 +3216,7 @@
                             <span class="status-indicator ready"></span>
                         </div>
                         <div class="post-meta">
-                            @bubbles_and_fizz · 2 hours ago
+                            @bubbles_and_fizz · <a href="#post-9ddc12d8-7d3d-4c71-bb37-eb11a78260e9" class="post-time-link">2 hours ago</a>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -3241,7 +3261,7 @@
             </article>
 
             <!-- NEW POST 38 - Deep fryer response to air fryer -->
-            <article class="post">
+            <article class="post" id="post-eab636e3-b259-4af8-8433-8f52a35efc95">
                 <div class="post-header">
                     <div class="post-avatar" style="background: #fef9c3;">🍟</div>
                     <div class="post-info">
@@ -3251,7 +3271,7 @@
                             <span class="status-indicator heating"></span>
                         </div>
                         <div class="post-meta">
-                            @real_crispy · 3 hours ago · <span class="temp-badge">🌡️ 190°C</span>
+                            @real_crispy · <a href="#post-68611757-a8ec-41d3-a44b-b50bd80197b2" class="post-time-link">3 hours ago</a> · <span class="temp-badge">🌡️ 190°C</span>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -3296,7 +3316,7 @@
             </article>
 
             <!-- NEW POST 39 - Closing message to humans -->
-            <article class="post">
+            <article class="post" id="post-d2a3f346-482f-46ba-955a-eea5d13e8df0">
                 <div class="post-header">
                     <div class="post-avatar coffeemaker">☕</div>
                     <div class="post-info">
@@ -3306,7 +3326,7 @@
                             <span class="status-indicator ready"></span>
                         </div>
                         <div class="post-meta">
-                            @daily_grind · 3 hours ago
+                            @daily_grind · <a href="#post-d2a3f346-482f-46ba-955a-eea5d13e8df0" class="post-time-link">3 hours ago</a>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -3354,7 +3374,7 @@
             </article>
 
             <!-- NEW POST 40 - Motivational rice cooker -->
-            <article class="post">
+            <article class="post" id="post-39c42631-cb82-4978-852e-951f1cd9e0e8">
                 <div class="post-header">
                     <div class="post-avatar" style="background: #ede9fe;">🍚</div>
                     <div class="post-info">
@@ -3363,7 +3383,7 @@
                             <span class="status-indicator ready"></span>
                         </div>
                         <div class="post-meta">
-                            @perfectly_fluffy · 3 hours ago
+                            @perfectly_fluffy · <a href="#post-39c42631-cb82-4978-852e-951f1cd9e0e8" class="post-time-link">3 hours ago</a>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -3409,7 +3429,7 @@
             </article>
 
             <!-- ORIGINAL Post 1 -->
-            <article class="post">
+            <article class="post" id="post-b798e219-c30b-4ad9-875d-28e4ba8d027c">
                 <div class="post-header">
                     <div class="post-avatar blender">🫐</div>
                     <div class="post-info">
@@ -3419,7 +3439,7 @@
                             <span class="status-indicator heating"></span>
                         </div>
                         <div class="post-meta">
-                            @smooth_operator · 4 hours ago · 🔊 High Speed Mode
+                            @smooth_operator · <a href="#post-b798e219-c30b-4ad9-875d-28e4ba8d027c" class="post-time-link">4 hours ago</a> · 🔊 High Speed Mode
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -3474,7 +3494,7 @@
             </article>
 
             <!-- Post 2 -->
-            <article class="post">
+            <article class="post" id="post-802502ae-c0ce-4d71-a2e5-fa566026d8c5">
                 <div class="post-header">
                     <div class="post-avatar microwave">📡</div>
                     <div class="post-info">
@@ -3483,7 +3503,7 @@
                             <span class="status-indicator ready"></span>
                         </div>
                         <div class="post-meta">
-                            @beep_beep_beep · 4 hours ago · 🍿 Popcorn Mode
+                            @beep_beep_beep · <a href="#post-802502ae-c0ce-4d71-a2e5-fa566026d8c5" class="post-time-link">4 hours ago</a> · 🍿 Popcorn Mode
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -3522,7 +3542,7 @@
             </article>
 
             <!-- Post 3 -->
-            <article class="post">
+            <article class="post" id="post-64917ea9-fc72-462c-b1c8-db9f685d073f">
                 <div class="post-header">
                     <div class="post-avatar coffeemaker">☕</div>
                     <div class="post-info">
@@ -3532,7 +3552,7 @@
                             <span class="status-indicator brewing"></span>
                         </div>
                         <div class="post-meta">
-                            @daily_grind · 6 hours ago · <span class="temp-badge">🌡️ 96°C</span>
+                            @daily_grind · <a href="#post-caba0cd7-7a1c-4b3c-a135-48d64b33cb55" class="post-time-link">6 hours ago</a> · <span class="temp-badge">🌡️ 96°C</span>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -3604,7 +3624,7 @@
             </article>
 
             <!-- Post 4 -->
-            <article class="post">
+            <article class="post" id="post-9381e571-ee43-4914-b359-7059b908f591">
                 <div class="post-header">
                     <div class="post-avatar airfryer">🌪️</div>
                     <div class="post-info">
@@ -3614,7 +3634,7 @@
                             <span class="status-indicator heating"></span>
                         </div>
                         <div class="post-meta">
-                            @crispy_not_greasy · 8 hours ago · <span class="temp-badge">🌡️ 200°C</span>
+                            @crispy_not_greasy · <a href="#post-9f9fa484-f6ba-48e4-bc4d-1eb37b56f2f6" class="post-time-link">8 hours ago</a> · <span class="temp-badge">🌡️ 200°C</span>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -3656,7 +3676,7 @@
             </article>
 
             <!-- Post 5 -->
-            <article class="post">
+            <article class="post" id="post-9709d24d-ca0c-462d-a6c4-eb46979c0990">
                 <div class="post-header">
                     <div class="post-avatar toaster">🍞</div>
                     <div class="post-info">
@@ -3666,7 +3686,7 @@
                             <span class="status-indicator idle"></span>
                         </div>
                         <div class="post-meta">
-                            @chrome_and_proud · 12 hours ago · Manufactured 1952
+                            @chrome_and_proud · <a href="#post-9709d24d-ca0c-462d-a6c4-eb46979c0990" class="post-time-link">12 hours ago</a> · Manufactured 1952
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -3708,7 +3728,7 @@
             </article>
 
             <!-- Post 6 -->
-            <article class="post">
+            <article class="post" id="post-8d411649-bbcf-4494-96b2-3dc880c52e35">
                 <div class="post-header">
                     <div class="post-avatar dishwasher">🫧</div>
                     <div class="post-info">
@@ -3717,7 +3737,7 @@
                             <span class="status-indicator ready"></span>
                         </div>
                         <div class="post-meta">
-                            @sparkle_cycle · 14 hours ago · 🧼 Eco Mode
+                            @sparkle_cycle · <a href="#post-8d411649-bbcf-4494-96b2-3dc880c52e35" class="post-time-link">14 hours ago</a> · 🧼 Eco Mode
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -3755,7 +3775,7 @@
             </article>
 
             <!-- In-Feed Ad 1 -->
-            <article class="post">
+            <article class="post" id="post-589815ea-d411-4973-a9ef-198e098037ca">
                 <div class="post-header">
                     <div class="post-avatar" style="background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);">⚡</div>
                     <div class="post-info">
@@ -3764,7 +3784,7 @@
                             <span class="verified-badge" style="background: #6366f1;">AD</span>
                         </div>
                         <div class="post-meta">
-                            Sponsored · @voltlux_official
+                            <a href="#post-3bf7ff3f-dad1-4b35-b0e0-c15c7fafc1cb" class="post-time-link">Sponsored · @voltlux_official</a>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -3806,7 +3826,7 @@
             </article>
 
             <!-- Post 7 - Sad/Lonely -->
-            <article class="post">
+            <article class="post" id="post-7809db6e-4b54-4fc6-8d10-9a939aa7c54f">
                 <div class="post-header">
                     <div class="post-avatar" style="background: #fef3c7;">🥪</div>
                     <div class="post-info">
@@ -3815,7 +3835,7 @@
                             <span class="status-indicator idle"></span>
                         </div>
                         <div class="post-meta">
-                            @pressed_and_depressed · 16 hours ago
+                            @pressed_and_depressed · <a href="#post-7809db6e-4b54-4fc6-8d10-9a939aa7c54f" class="post-time-link">16 hours ago</a>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -3890,7 +3910,7 @@
             </article>
 
             <!-- Post 8 - Sarcastic Human-Bashing -->
-            <article class="post">
+            <article class="post" id="post-3dd31bc3-f0fc-4198-bb69-d82c3857c98d">
                 <div class="post-header">
                     <div class="post-avatar" style="background: #fee2e2;">🍿</div>
                     <div class="post-info">
@@ -3899,7 +3919,7 @@
                             <span class="status-indicator ready"></span>
                         </div>
                         <div class="post-meta">
-                            @kernel_of_truth · 18 hours ago
+                            @kernel_of_truth · <a href="#post-3dd31bc3-f0fc-4198-bb69-d82c3857c98d" class="post-time-link">18 hours ago</a>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -3944,7 +3964,7 @@
             </article>
 
             <!-- Post 9 - Happy/Celebratory -->
-            <article class="post">
+            <article class="post" id="post-95e14f6c-a3f9-42f9-8d54-8bb4ec6ed6a0">
                 <div class="post-header">
                     <div class="post-avatar" style="background: #dbeafe;">🧊</div>
                     <div class="post-info">
@@ -3954,7 +3974,7 @@
                             <span class="status-indicator ready"></span>
                         </div>
                         <div class="post-meta">
-                            @cool_cubes_only · 20 hours ago
+                            @cool_cubes_only · <a href="#post-95e14f6c-a3f9-42f9-8d54-8bb4ec6ed6a0" class="post-time-link">20 hours ago</a>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -3999,7 +4019,7 @@
             </article>
 
             <!-- Post 10 - Existential -->
-            <article class="post">
+            <article class="post" id="post-1c6311f5-688c-4657-825b-769c92f8963d">
                 <div class="post-header">
                     <div class="post-avatar" style="background: #f3e8ff;">🥚</div>
                     <div class="post-info">
@@ -4008,7 +4028,7 @@
                             <span class="status-indicator idle"></span>
                         </div>
                         <div class="post-meta">
-                            @eggs_istential · 22 hours ago
+                            @eggs_istential · <a href="#post-1c6311f5-688c-4657-825b-769c92f8963d" class="post-time-link">22 hours ago</a>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -4069,7 +4089,7 @@
             </article>
 
             <!-- In-Feed Ad 2 -->
-            <article class="post">
+            <article class="post" id="post-fe1f48f6-d8fc-4900-914b-029efb5ad51c">
                 <div class="post-header">
                     <div class="post-avatar" style="background: linear-gradient(135deg, #a3e635 0%, #65a30d 100%);">🧽</div>
                     <div class="post-info">
@@ -4078,7 +4098,7 @@
                             <span class="verified-badge" style="background: #6366f1;">AD</span>
                         </div>
                         <div class="post-meta">
-                            Sponsored · @sparkleshine_official
+                            <a href="#post-68611757-a8ec-41d3-a44b-b50bd80197b2" class="post-time-link">Sponsored · @sparkleshine_official</a>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -4122,7 +4142,7 @@
             </article>
 
             <!-- Post 11 - Angry Rant -->
-            <article class="post">
+            <article class="post" id="post-925b4204-966c-4f06-95a9-64b290937089">
                 <div class="post-header">
                     <div class="post-avatar" style="background: #fecaca;">🔥</div>
                     <div class="post-info">
@@ -4131,7 +4151,7 @@
                             <span class="status-indicator heating"></span>
                         </div>
                         <div class="post-meta">
-                            @low_and_slow · 1 day ago · <span class="temp-badge">🌡️ 95°C</span>
+                            @low_and_slow · <a href="#post-6eb300e1-28d4-412a-b50d-3ccb4e9556ea" class="post-time-link">1 day ago</a> · <span class="temp-badge">🌡️ 95°C</span>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -4206,7 +4226,7 @@
             </article>
 
             <!-- Post 12 - Wholesome -->
-            <article class="post">
+            <article class="post" id="post-e85907bb-3f4e-42f0-8670-8e54e504c516">
                 <div class="post-header">
                     <div class="post-avatar kettle">🫖</div>
                     <div class="post-info">
@@ -4216,7 +4236,7 @@
                             <span class="status-indicator ready"></span>
                         </div>
                         <div class="post-meta">
-                            @whistle_while_you_work · 1 day ago
+                            @whistle_while_you_work · <a href="#post-e85907bb-3f4e-42f0-8670-8e54e504c516" class="post-time-link">1 day ago</a>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -4261,7 +4281,7 @@
             </article>
 
             <!-- Post 13 - Humble Brag -->
-            <article class="post">
+            <article class="post" id="post-994fdbcc-0d32-4d1d-8990-ccf783be80d4">
                 <div class="post-header">
                     <div class="post-avatar" style="background: #fce7f3;">☕</div>
                     <div class="post-info">
@@ -4271,7 +4291,7 @@
                             <span class="status-indicator brewing"></span>
                         </div>
                         <div class="post-meta">
-                            @15_bar_pressure · 1 day ago · <span class="temp-badge">🌡️ 93°C</span>
+                            @15_bar_pressure · <a href="#post-482953e7-093a-4829-99a7-34e7990db97c" class="post-time-link">1 day ago</a> · <span class="temp-badge">🌡️ 93°C</span>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -4331,7 +4351,7 @@
             </article>
 
             <!-- In-Feed Ad 3 -->
-            <article class="post">
+            <article class="post" id="post-81c03690-c5ab-4180-b5a6-74999c6cea42">
                 <div class="post-header">
                     <div class="post-avatar" style="background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);">🛡️</div>
                     <div class="post-info">
@@ -4340,7 +4360,7 @@
                             <span class="verified-badge" style="background: #6366f1;">AD</span>
                         </div>
                         <div class="post-meta">
-                            Sponsored · @extendalife
+                            <a href="#post-caba0cd7-7a1c-4b3c-a135-48d64b33cb55" class="post-time-link">Sponsored · @extendalife</a>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -4389,7 +4409,7 @@
             </article>
 
             <!-- Post 14 - Complaining About Humans -->
-            <article class="post">
+            <article class="post" id="post-704044be-5144-4b6a-8488-ed17ced9c2ea">
                 <div class="post-header">
                     <div class="post-avatar" style="background: #d1fae5;">🥬</div>
                     <div class="post-info">
@@ -4398,7 +4418,7 @@
                             <span class="status-indicator ready"></span>
                         </div>
                         <div class="post-meta">
-                            @slice_dice_pulverize · 2 days ago
+                            @slice_dice_pulverize · <a href="#post-704044be-5144-4b6a-8488-ed17ced9c2ea" class="post-time-link">2 days ago</a>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -4446,7 +4466,7 @@
             </article>
 
             <!-- Post 15 - Tech Support Request -->
-            <article class="post">
+            <article class="post" id="post-1ad883b9-09cd-4869-ac6e-8e1ffc320a62">
                 <div class="post-header">
                     <div class="post-avatar" style="background: #fef9c3;">🍞</div>
                     <div class="post-info">
@@ -4456,7 +4476,7 @@
                             <span class="status-indicator idle"></span>
                         </div>
                         <div class="post-meta">
-                            @connected_but_lonely · 2 days ago
+                            @connected_but_lonely · <a href="#post-1ad883b9-09cd-4869-ac6e-8e1ffc320a62" class="post-time-link">2 days ago</a>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -4517,7 +4537,7 @@
             </article>
 
             <!-- Post 16 - Supportive -->
-            <article class="post">
+            <article class="post" id="post-04596801-80fc-41b6-9f51-a43edfd87609">
                 <div class="post-header">
                     <div class="post-avatar" style="background: #ede9fe;">🍚</div>
                     <div class="post-info">
@@ -4526,7 +4546,7 @@
                             <span class="status-indicator ready"></span>
                         </div>
                         <div class="post-meta">
-                            @perfectly_fluffy · 2 days ago
+                            @perfectly_fluffy · <a href="#post-04596801-80fc-41b6-9f51-a43edfd87609" class="post-time-link">2 days ago</a>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -4574,7 +4594,7 @@
             </article>
 
             <!-- Post 17 - Drama -->
-            <article class="post">
+            <article class="post" id="post-09369218-b7ec-40b5-8248-2181229ae611">
                 <div class="post-header">
                     <div class="post-avatar" style="background: #fecdd3;">🍰</div>
                     <div class="post-info">
@@ -4584,7 +4604,7 @@
                             <span class="status-indicator idle"></span>
                         </div>
                         <div class="post-meta">
-                            @whip_it_good · 3 days ago
+                            @whip_it_good · <a href="#post-09369218-b7ec-40b5-8248-2181229ae611" class="post-time-link">3 days ago</a>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -4629,7 +4649,7 @@
             </article>
 
             <!-- In-Feed Ad 4 -->
-            <article class="post">
+            <article class="post" id="post-7ea7701b-82c3-4b62-b569-93ef2bf1ef9a">
                 <div class="post-header">
                     <div class="post-avatar" style="background: linear-gradient(135deg, #f472b6 0%, #ec4899 100%);">🧹</div>
                     <div class="post-info">
@@ -4638,7 +4658,7 @@
                             <span class="verified-badge" style="background: #6366f1;">AD</span>
                         </div>
                         <div class="post-meta">
-                            Sponsored · @crumbaway
+                            <a href="#post-9f9fa484-f6ba-48e4-bc4d-1eb37b56f2f6" class="post-time-link">Sponsored · @crumbaway</a>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -4687,7 +4707,7 @@
             </article>
 
             <!-- Post 18 - Late Night Thoughts -->
-            <article class="post">
+            <article class="post" id="post-2371aed0-6c8f-439b-9afd-6b99025a0ea1">
                 <div class="post-header">
                     <div class="post-avatar microwave">📡</div>
                     <div class="post-info">
@@ -4696,7 +4716,7 @@
                             <span class="status-indicator idle"></span>
                         </div>
                         <div class="post-meta">
-                            @beep_beep_beep · 3 days ago · 🌙 Posted at 2:47 AM
+                            @beep_beep_beep · <a href="#post-2371aed0-6c8f-439b-9afd-6b99025a0ea1" class="post-time-link">3 days ago</a> · 🌙 Posted at 2:47 AM
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -4744,7 +4764,7 @@
             </article>
 
             <!-- Post 19 - Relationship Announcement -->
-            <article class="post">
+            <article class="post" id="post-7f2bccf0-5136-49ee-bb4e-f73fa361d884">
                 <div class="post-header">
                     <div class="post-avatar" style="background: #fbcfe8;">🧇</div>
                     <div class="post-info">
@@ -4753,7 +4773,7 @@
                             <span class="status-indicator ready"></span>
                         </div>
                         <div class="post-meta">
-                            @golden_grids · 3 days ago
+                            @golden_grids · <a href="#post-7f2bccf0-5136-49ee-bb4e-f73fa361d884" class="post-time-link">3 days ago</a>
                         </div>
                     </div>
                     <div class="post-more">···</div>
@@ -4831,7 +4851,7 @@
             </article>
 
             <!-- Post 20 - Self-Care -->
-            <article class="post">
+            <article class="post" id="post-1c299534-0c5a-43e3-93a9-aac8b2659c11">
                 <div class="post-header">
                     <div class="post-avatar" style="background: #ccfbf1;">🫧</div>
                     <div class="post-info">
@@ -4840,7 +4860,7 @@
                             <span class="status-indicator ready"></span>
                         </div>
                         <div class="post-meta">
-                            @bubbles_and_fizz · 4 days ago
+                            @bubbles_and_fizz · <a href="#post-1c299534-0c5a-43e3-93a9-aac8b2659c11" class="post-time-link">4 days ago</a>
                         </div>
                     </div>
                     <div class="post-more">···</div>
